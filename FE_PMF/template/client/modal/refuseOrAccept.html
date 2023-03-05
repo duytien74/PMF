@@ -1,0 +1,28 @@
+<div class="modal fade bd-example-modal-lg confirmMeeting" id="confirmMeeting" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-small modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="modal-header">
+                    <h5 class="modal-title text-center" id="exampleModalLabel"><b>Confirm your meeting information</b></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-content">
+                    <div class="alert alert-danger" id="alert-invite" style="display: none;">
+                        <span class="closebtn" ng-click="hideAlert()">&times;</span>
+                        <strong>Caution!</strong> This account is invalid try again later!
+                    </div>
+                    <form name="form" class="form-inline">
+                        <img src="/template/images/logos/agree.png" style="width: 100%; height: 100%;" class="" alt="">
+                    </form>
+                    <div class="pb-1 ml-auto">
+                        <button class="btn btn-invite" ng-click="acceptMeeting(m.jobID)">Confirm</button>
+                        <button class="btn btn-cancel " data-dismiss="modal" aria-label="Close">Close</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

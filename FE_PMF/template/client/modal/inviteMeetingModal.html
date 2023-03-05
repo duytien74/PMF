@@ -1,0 +1,42 @@
+<div class="modal fade bd-example-modal-lg inviteModal" id="invite-new-people" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-small modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="modal-header">
+                    <h5 class="modal-title text-center" id="exampleModalLabel"><b>Invite other people this meeting</b></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-content">
+                    <div class="alert alert-danger" id="alert-invite" style="display: none;">
+                        <span class="closebtn" ng-click="hideAlert()">&times;</span>
+                        <strong>Caution!</strong> This account is invalid try again later!
+                    </div>
+                    <form name="form" class="form-inline">
+                        <div class="form-group  m-2 mt-2 mb-2">
+                            <input ng-keypress="hideAlert()" type="search" id="searchPeople" placeholder="Find people" class="form-control" ng-model="searchPeople" style="width: 330px;max-width: 330px;">
+                        </div>
+                        <button class="btn btn-invite" ng-click="sendInviteMeeting()">Send invite</button>
+                    </form>
+                    <div class="">
+                        <span class="dropdown-item" ng-repeat="m in listPeopleInvites|filter:searchPeople" ng-click="chooserPerson(m.email,m.username)" style="cursor: pointer;">
+                            <img src="http://localhost:8080/pmf/getImage/{{m.image}}" width="35" height="35" style="box-shadow: 0 0 5px green;" class="rounded-circle mr-3" alt=""> {{m.email}} <b>({{m.fullname}})</b>
+                        </span>
+                        <div ng-show="listPeopleInvites==''||!listPeopleInvites==underfined">
+                            <div class=" text-center">
+                                <div class="card-body">
+                                    <p class="card-text">
+                                        <img src="/template/images/logos/NotExist.png" class="card-img-top" alt="...">
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
